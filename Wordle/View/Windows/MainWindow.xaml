@@ -1,0 +1,46 @@
+﻿<mah:MetroWindow x:Class="Wordle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:controls="clr-namespace:Wordle.View"
+        xmlns:controls2="clr-namespace:Wordle.View.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        KeyUp="KeyPressed">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="StackPanel">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Padding" Value="2" />
+                <Setter Property="KeyboardNavigation.AcceptsReturn" Value="False"/>
+            </Style>
+            <Style TargetType="controls:LetterBox">
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="FontSize" Value="24" />
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid x:Name="Main">
+        <StackPanel Orientation="Vertical">
+            <StackPanel x:Name="menuBarPanel" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="newButton" Content="New" Click="NewButton_Click">
+                </Button>
+                <Label />
+                <Button x:Name="instructionsButton" Content="Help" Click="InstructionsButton_Click" />
+                <Label />
+                <Button x:Name="settingsButton" Content="Settings" Click="SettingsButton_Click" />
+            </StackPanel>
+            <StackPanel x:Name="wordlePanel" HorizontalAlignment="Center"></StackPanel>
+            <StackPanel x:Name="keyboardPanel"></StackPanel>
+            <StackPanel x:Name="enterButtonPanel">
+                <Button x:Name="enterButton" Content="Enter" Click="EnterKeyPressed" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>
